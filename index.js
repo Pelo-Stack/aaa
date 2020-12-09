@@ -37,7 +37,7 @@ function restartAwal(tobz){
 
 const start = async (tobz = new Client()) => {
         console.log('------------------------------------------------')
-        console.log(color(figlet.textSync('ELAINA BOT', { horizontalLayout: 'full' })))
+        console.log(color(figlet.textSync('BOT X-PLAY', { horizontalLayout: 'full' })))
         console.log('------------------------------------------------')
         console.log('[DEV] TOBZ')
         console.log('[SERVER] Server Started!')
@@ -69,27 +69,27 @@ const start = async (tobz = new Client()) => {
             }))
         
         tobz.onAddedToGroup(async (chat) => {
-            if(isWhite(chat.id)) return tobz.sendText(chat.id, 'Halo aku Elaina, Ketik #help Untuk Melihat List Command Ku...')
+            if(isWhite(chat.id)) return tobz.sendText(chat.id, 'Halo aku BOT X-PLAY, Ketik #help Untuk Melihat List Command Ku...')
             if(mtcState === false){
                 const groups = await tobz.getAllGroups()
                 // BOT group count less than
                 if(groups.length > groupLimit){
-                    await tobz.sendText(chat.id, 'Maaf, Batas group yang dapat Elaina tampung sudah penuh').then(async () =>{
+                    await tobz.sendText(chat.id, 'Maaf, Batas group yang dapat BOT X-PLAY tampung sudah penuh').then(async () =>{
                         tobz.deleteChat(chat.id)
                         tobz.leaveGroup(chat.id)
                     })
                 }else{
                     if(chat.groupMetadata.participants.length < memberLimit){
-                        await tobz.sendText(chat.id, `Maaf, BOT keluar jika member group tidak melebihi ${memberLimit} orang`).then(async () =>{
+                        await tobz.sendText(chat.id, `Maaf, BOT X-PLAY keluar jika member group tidak melebihi ${memberLimit} orang`).then(async () =>{
                             tobz.deleteChat(chat.id)
                             tobz.leaveGroup(chat.id)
                         })
                     }else{
-                        if(!chat.isReadOnly) tobz.sendText(chat.id, 'Halo aku Elaina, Ketik #help Untuk Melihat List Command Ku...')
+                        if(!chat.isReadOnly) tobz.sendText(chat.id, 'Halo aku BOT X-PLAY, Ketik #help Untuk Melihat List Command Ku...')
                     }
                 }
             }else{
-                await tobz.sendText(chat.id, 'Elaina sedang maintenance, coba lain hari').then(async () => {
+                await tobz.sendText(chat.id, 'BOT X-PLAY sedang maintenance, coba lain hari').then(async () => {
                     tobz.deleteChat(chat.id)
                     tobz.leaveGroup(chat.id)
                 })
